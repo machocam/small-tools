@@ -8,45 +8,24 @@ import random, itertools, timeit
 
 #PROBLEM INFORMATION INPUT
 # ----------------
-components = [119.98,
-           114.26,
-           1295,
-           97.57,
-           119,
-           121.78,
-           2.48,
-           4.96
-          ]
+components = [119.98, 114.26, 1295, 97.57, 119, 121.78, 2.48, 4.96]
 
 sums = [358.50, 1516.53]
 # ----------------
 
-def use_random():
-    mysum = 0
-    while mysum not in sums:
-        myrange = range(len(components))
-        mysum = 0
-        while len(myrange)>0 and mysum not in sums: 
-            randint = random.choice(myrange)
-            mysum += components[randint]
-            myrange.remove(randint)
-
-    mysum_range = [components[x] for x in range(len(components)) if x not in myrange] #outputs the components of the sum found in sums
-
-    print mysum, mysum_range
-
-
 def use_all_combis():
     combis = []
-    for num in range(2, 8):
+    allsums = {}
+    for num in range(2, len(components)):  #the 2 here is because we need at least two components for any given sum
         for item in itertools.combinations(components, num):
             combis.append(item)
-    allsums = {}
     for item in combis: 
         allsums[item] = round(sum(item),2)
     for key, value in allsums.items():
         if value in sums:
             print key, value
+            
+use_all_combis()
 
 
 
