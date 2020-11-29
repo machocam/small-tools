@@ -12,7 +12,8 @@ All members of family 1 give gifts to all members of family 2.
 The format should be the following: {family_number : member1, member2} 
 2. Copy the same values in the receviers and givers variables
 2. Run the program with "python3 random_gift.py"
-3. It will output in a file in the same directory the results
+3. It will output the results as STOUT 
+
 
 # Interpretation of results 
 The results are also dictionaries. Where the "key" is the giver and the "value" the receiver. 
