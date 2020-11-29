@@ -22,12 +22,9 @@ def use_all_combis():
             combis.append(item)
     for item in combis: 
         allsums[item] = round(sum(item),2)
-    for key, value in allsums.items():
+    for key, value in list(allsums.items()):
         if value in sums:
-            print key, value
+            print(key, value)
             
 use_all_combis()
 
-
-
-    
